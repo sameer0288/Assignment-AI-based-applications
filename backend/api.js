@@ -1,13 +1,13 @@
 const axios = require("axios");
 const scrapingbee = require("scrapingbee");
-const apiKey = "AIzaSyAgoFKSMlwtOU8zFqzShhaE7QbqAWpeVko";
+const apiKey = "AIzaSyAgoFKSMlwtOU8zFqzShhaE7QbqAWpeVko"; // Replace 'YOUR_GOOGLE_CUSTOM_SEARCH_API_KEY' with your actual API key
 const scrapingBeeApiKey =
-  "P5IS953T7OYL5KJG8J3SVPAV5VUJ49L2OXB7HIQDVL8SSG7O9A3J6DQ6CTK65KEAM7L7MQJIEW20ZOCP";
+  "P5IS953T7OYL5KJG8J3SVPAV5VUJ49L2OXB7HIQDVL8SSG7O9A3J6DQ6CTK65KEAM7L7MQJIEW20ZOCP"; // Replace 'YOUR_SCRAPING_BEE_API_KEY' with your actual API key
+
+const searchEngineId = "b46ca51d4f2f84d05"; // Replace with your Custom Search Engine ID
+const numResults = 5; // Number of results to retrieve
 
 // Function to get top 5 URLs from Google Custom Search API
-
-const searchEngineId = "b46ca51d4f2f84d05";
-const numResults = 5;
 
 async function getTop5Urls(query) {
   try {
@@ -36,6 +36,8 @@ async function getTop5Urls(query) {
     throw error;
   }
 }
+
+// Function to scrape text content from a URL using ScrapingBee API
 
 var extract_rules = {
   title: "body",
